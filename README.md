@@ -1,3 +1,11 @@
+
+> [!IMPORTANT]
+> The JSON Logger has moved from
+> [mulesoft-catalyst/logger-mule-extension](https://github.com/mulesoft-consulting/json-logger)
+> to
+> - [salesforce-misc/mulesoft-json-logger](https://github.com/salesforce-misc/mulesoft-json-logger)
+> - [anypointcloud/json-logger](https://github.com/anypointcloud/json-logger)
+
 # JSON Logger - Mule 4
 
 Drop-in replacement for default Mule Logger that outputs a JSON structure based on a predefined JSON schema.
@@ -47,7 +55,7 @@ Rather than running the deploy script you can instead do:
 
 ### 18th September 2024
 
-* Updated dependencies to fix vulnerabilities and and moved MUnit extensions to test scope as dependencies were being packaged with the JSON Logger which was adding ~50mb to deployable Mule jars
+* Updated dependencies to fix vulnerabilities and moved MUnit extensions to test scope as dependencies were being packaged with the JSON Logger which was adding ~50mb to deployable Mule jars
 
 ## Support disclaimer
 
