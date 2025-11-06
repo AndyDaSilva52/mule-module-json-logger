@@ -52,15 +52,15 @@
       "type": "string",
       "javaType": "org.mule.extension.jsonlogger.api.pojos.Priority",
       "enum": [
-        "DEBUG",
-        "TRACE",
-        "INFO",
+        "ERROR",
         "WARN",
-        "ERROR"
+        "INFO",
+        "DEBUG",
+        "TRACE"
       ],
       "sdk": {
         "default": "INFO",
-        "summary": "Logger priority"
+        "summary": "Logger priority. The order is: off < fatal < error < warn < info < debug < trace."
       },
       "note": "This field is mandatory. DON'T REMOVE"
     },
