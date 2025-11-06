@@ -35,6 +35,8 @@
       "javaType": "org.mule.extension.jsonlogger.api.pojos.TracePoint",
       "enum": [
         "START",
+        "BEFORE",
+        "AFTER",
         "BEFORE_TRANSFORM",
         "AFTER_TRANSFORM",
         "BEFORE_REQUEST",
@@ -44,7 +46,7 @@
         "EXCEPTION"
       ],
       "sdk": {
-        "default": "START",
+        "default": "FLOW",
         "summary": "Current processing stage"
       }
     },
