@@ -34,6 +34,7 @@
 
     <build>
         <plugins>
+            <!-- You may have issues with maven-jdeps-plugin on Windows. Try WSL or comment out this plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jdeps-plugin</artifactId>
@@ -129,11 +130,36 @@
             <id>anypoint-exchange-v2</id>
             <name>Anypoint Exchange V2</name>
             <!-- Update if on US Control Plane -->
-            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+            <url>https://maven.anypoint.mulesoft.com/api/v2/organizations/${project.groupId}/maven</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>https://repository.mulesoft.org/releases/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-extensions-maven-plugin</artifactId>
+            <version>${munit.extensions.maven.plugin.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.mule.sdk</groupId>
             <artifactId>mule-sdk-api</artifactId>
@@ -161,9 +187,9 @@
         </dependency>
         <dependency>
             <groupId>net.minidev</groupId>
-           <artifactId>json-smart</artifactId>
+            <artifactId>json-smart</artifactId>
             <version>${json.smart.version}</version>
-           </dependency>
+        </dependency>
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
@@ -179,12 +205,6 @@
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
             <version>${lmax.disruptor.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.mulesoft.munit</groupId>
-            <artifactId>munit-extensions-maven-plugin</artifactId>
-            <version>${munit.extensions.maven.plugin.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
